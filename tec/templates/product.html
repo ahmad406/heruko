@@ -1,0 +1,147 @@
+{% load static %}
+{% static "images" as baseUrl %}
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.11.2/css/all.css">
+      <link rel="stylesheet" href="/static/style/bootstrap.css">
+    <link rel="stylesheet" href="{% static 'style\product.css' %}">
+    <title>Product</title>
+
+
+</head>
+
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark ">
+
+    <a class="navbar-brand " href="/">
+        MiTec</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto">
+            <li class="nav-item ">
+                <a class="nav-link py-2" href="/">Home <span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item active">
+                <a class="nav-link" href="/ecom/product">Product</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="/about">AboutUs</a>
+            </li>
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="/" id="navbarDropdown" role="button" data-toggle="dropdown"
+                    aria-haspopup="true" aria-expanded="false">
+                    Technology
+                </a>
+                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                    <a class="dropdown-item" href="/smartphone.html">Smartphone</a>
+                    <a class="dropdown-item" href="/tablet.html">Tablet</a>
+                    <div class="dropdown-divider"></div>
+                    <a class="dropdown-item" href="/laptop.html">Laptop</a>
+                    <a class="dropdown-item" href="/pc.html">Pre-built Pc</a>
+                </div>
+            </li>
+        </ul>
+        <a class="fas fa-shopping-cart  " data-toggle="modal" data-target="#exampleModal"
+            style="font-size:18px;color:white" href="form.html"> &nbsp Cart</a>
+
+    </div>
+
+</nav>
+<div class="container">
+    <h1 class="text-center">Shop Now</h1>
+    <hr>
+
+    <div class="row d-flex justify-content-center">
+        {% for pros in pros%}
+        <div class="card " style="width: 18rem; ">
+            <img class="card-img-top shop-item-image" src="{{pros.images.url}}" alt="Card image cap">
+
+            {% if pros.offer %}
+            <div class="offer spam">Special offer </div>
+            {% endif %}
+            <div class="card-body">
+                <h5 class="card-title shop-item-title">{{pros.name}}</h5>
+                <p class="card-text shop-item-details">{{pros.desc}}</p>
+            </div>
+            <ul class="list-group list-group-flush ">
+                <li class="list-group-item shop-item-price">${{pros.price}}</li>
+
+
+            </ul>
+            <div class="card-body">
+                <a href="#" class="btn btn-primary ">Buy now</a>
+                <button class="btn btn-primary shop-item-button   float-right" type="button">Add to cart</button>
+
+            </div>
+        </div>
+
+        {% endfor %}
+        <div class="container d-flex justify-content-center bg-light">
+            <footer class="my-5 pt-5  text-muted text-center text-small ">
+                <h2><u>MiTech</u></h2>
+                <p class="mb-1">&copy; 2019-2020 Mi Tec</p>
+                <ul class="list-inline">
+                    <li class="list-inline-item"><a href="#">Privacy</a></li>
+                    <li class="list-inline-item"><a href="#">Terms</a></li>
+                    <li class="list-inline-item"><a href="#">Support</a></li>
+                </ul>
+            </footer>
+        </div>
+    </div>
+
+
+
+
+    <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">My Cart</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <section class="container ">
+                        <h2 class="section-header">CART</h2>
+                        <div class="cart-row">
+                            <span class="cart-item cart-header cart-column">ITEM</span>
+                            <span class="cart-price cart-header cart-column">PRICE</span>
+                            <span class="cart-quantity cart-header cart-column">QUANTITY</span>
+                        </div>
+                        <div class="cart-items">
+                        </div>
+                        <div class="cart-total">
+                            <strong class="cart-total-title">Total</strong>
+                            <span class="cart-total-price">$0</span>
+                        </div>
+
+                    </section>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary">Check Out</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+
+ 
+    <script src="{% static 'style\boot.js' %}"></script>
+    <script src="{% static 'style\bootm.js' %}"></script>
+    <script src="{% static 'style\store.js' %}"></script>
+
+    </body>
+
+</html>
