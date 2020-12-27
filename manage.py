@@ -20,3 +20,5 @@ def main():
 
 if __name__ == '__main__':
     main()
+from config import DEFAULT_DATA_PATH
+    print 'DEFAULT_DATA_PATH=%s' % DEFAULT_DATA_PATH
