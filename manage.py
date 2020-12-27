@@ -20,4 +20,4 @@ def main():
 
 if __name__ == '__main__':
     main()
-from config import DEFAULT_DATA_PATH
+from ..config import DEFAULT_DATA_PATH
