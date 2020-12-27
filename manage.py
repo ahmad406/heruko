@@ -2,7 +2,7 @@
 """Django's command-line utility for administrative tasks."""
 import os
 import sys
-from ..config import DEFAULT_DATA_PATH
+
 
 
 def main():
