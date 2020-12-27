@@ -13,7 +13,6 @@ import os
 import re
 import sys
 
-from .tokens import Token, SCALAR_TOKENS, WORD, BACKTICK, DOLLAR
 from .parser import (
     Parser,
     MappingBody,
