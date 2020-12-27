@@ -1,11 +1,7 @@
 #
 # Copyright 2019-2020 by Vinay Sajip. All Rights Reserved.
 #
-try:
-    from collections.abc import Mapping
-except ImportError:
-    from collections import Mapping
-import datetime
+
 import importlib
 import io
 import logging
@@ -13,20 +9,6 @@ import os
 import re
 import sys
 
-from .parser import (
-    Parser,
-    MappingBody,
-    ListBody,
-    ASTNode,
-    ODict,
-    open_file,
-    RecognizerError,
-    ParserError,
-)
-
-__all__ = ['Config', 'ConfigFormatError', 'ConfigError']
-
-logger = logging.getLogger(__name__)
 
 
 if sys.version_info[0] < 3:
