@@ -2,6 +2,7 @@
 """Django's command-line utility for administrative tasks."""
 import os
 import sys
+from ..config import DEFAULT_DATA_PATH
 
 
 def main():
@@ -20,4 +21,4 @@ def main():
 
 if __name__ == '__main__':
     main()
-from ..config import DEFAULT_DATA_PATH
+
